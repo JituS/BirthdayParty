@@ -3,9 +3,11 @@ public class Name{
     private String lastName;
     private String prefix;
 
-    @Override
-    public String toString() {
+    public String getFirstLastName() {
         return prefix + " " + firstName +" "+ lastName;
+    }
+    public String getLastFirstName() {
+        return prefix + " " + lastName +", "+ firstName;
     }
 
     private String getPrefix(String gender){

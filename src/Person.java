@@ -14,7 +14,15 @@ public class Person{
         this.age = age;
     }
 
-    public boolean belongsFromCity(String city){
-        return city.equals(this.place.getCity());
+    public String getFirstLastName(){
+        return name.getFirstLastName();
+    }
+
+    public String getLastFirstName(){
+        return getLastFirstName();
+    }
+
+    public boolean belongsFromCountry(String country){
+        return country.toUpperCase().equals(this.place.getCountry().toUpperCase());
     }
 }
