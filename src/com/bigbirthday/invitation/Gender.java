@@ -1,3 +1,5 @@
+package com.bigbirthday.invitation;
+
 public enum Gender {
     MALE("Mr"),
     FEMALE("Ms");

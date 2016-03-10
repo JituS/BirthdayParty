@@ -1,3 +1,5 @@
+package com.bigbirthday.invitation;
+
 public class Country {
     private final String country;
     public Country(String country) {

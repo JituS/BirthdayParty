@@ -1,3 +1,5 @@
+package com.bigbirthday.invitation;
+
 public class Age {
     private int age;
     public Age(int age) {

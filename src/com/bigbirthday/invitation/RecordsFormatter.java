@@ -1,3 +1,5 @@
+package com.bigbirthday.invitation;
+
 import java.io.IOException;
 
 public class RecordsFormatter {
@@ -8,7 +10,7 @@ public class RecordsFormatter {
     }
 
     public Person[] getRecords() throws IOException {
-        String[] allRecords = new String(fileText).split("\n");
+        String[] allRecords = fileText.split("\n");
         Person[] records = new Person[allRecords.length];
         for (int i = 0; i < allRecords.length; i++){
             String[] record = allRecords[i].split(",");

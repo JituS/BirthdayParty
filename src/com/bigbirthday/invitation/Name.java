@@ -1,4 +1,4 @@
-import java.util.Arrays;
+package com.bigbirthday.invitation;
 
 public class Name{
     private String firstName;
@@ -18,7 +18,7 @@ public class Name{
 
     public String getInformalName() {
         String prefix = gender.equalsIgnoreCase("female") ? Gender.FEMALE.getPrefix() : Gender.MALE.getPrefix();
-        return prefix + " " + firstName +" "+ lastName;
+        return prefix + " " + firstName +" "+ lastName ;
     }
 
     public String getFormalName() {

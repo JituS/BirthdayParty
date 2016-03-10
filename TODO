@@ -8,10 +8,10 @@ Output format:
 	Mr first last or Mr last, first
 
 usage:
-    java Label filename -f [-c countryName -a age | -a age -c countryName]
-    java Label filename -if [-c countryName -a age | -a age -c countryName]
-    java Label filename //default it should take formal name
-    java Label filename //default it should take formal name
+    java com.bigbirthday.invitation.Label filename -f [-c countryName -a age | -a age -c countryName]
+    java com.bigbirthday.invitation.Label filename -if [-c countryName -a age | -a age -c countryName]
+    java com.bigbirthday.invitation.Label filename //default it should take formal name
+    java com.bigbirthday.invitation.Label filename //default it should take formal name
 --------------------------------------------------------------------------------
 
 Need to implement

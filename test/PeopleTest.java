@@ -1,3 +1,4 @@
+import com.bigbirthday.invitation.*;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -32,8 +33,8 @@ public class PeopleTest {
         peopleList[1] = Jeromy;
         peopleList[2] = Arun;
         People people = new People();
-        for(int i = 0 ; i < peopleList.length; i++){
-            people.add(peopleList[i]);
+        for (Person aPeopleList : peopleList) {
+            people.add(aPeopleList);
         }
         People expected = new People();
         expected.add(Gavin);
@@ -52,8 +53,8 @@ public class PeopleTest {
         peopleList[1] = Jeromy;
         peopleList[2] = Arun;
         People people = new People();
-        for(int i = 0 ; i < peopleList.length; i++){
-            people.add(peopleList[i]);
+        for (Person aPeopleList : peopleList) {
+            people.add(aPeopleList);
         }
         People expected = new People();
         People actual = people.countryFilter(new Country("India"));
@@ -70,8 +71,8 @@ public class PeopleTest {
         peopleList[1] = Jeromy;
         peopleList[2] = Arun;
         People people = new People();
-        for(int i = 0 ; i < peopleList.length; i++){
-            people.add(peopleList[i]);
+        for (Person aPeopleList : peopleList) {
+            people.add(aPeopleList);
         }
         People expected = new People();
         expected.add(Gavin);

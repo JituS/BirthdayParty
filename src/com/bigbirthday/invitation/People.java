@@ -1,24 +1,12 @@
+package com.bigbirthday.invitation;
+
 import java.util.ArrayList;
-import java.util.HashMap;
 
 public class People{
     private ArrayList<Person> people;
 
     public People() {
         this.people = new ArrayList<>();
-    }
-
-    public void print(HashMap<String, String> filter) {
-        for (Person next : people) {
-            String labelString = "";
-            if(filter.get("format").equals("-f")) labelString += next.formal();
-            else labelString += next.inFormal();
-            for (String option : filter.keySet()) {
-                if (option.equalsIgnoreCase("c")) labelString += ", " + next.country();
-                if (option.equalsIgnoreCase("a")) labelString += ", " + next.age();
-            }
-            System.out.println(labelString);
-        }
     }
 
     public People ageFilter(Age age){
@@ -49,5 +37,13 @@ public class People{
         if (o == null || getClass() != o.getClass()) return false;
         People people1 = (People) o;
         return people != null ? people.equals(people1.people) : people1.people == null;
+    }
+
+    public Person get(int index) {
+        return this.people.get(index);
+    }
+
+    public int size() {
+        return people.size();
     }
 }

@@ -1,10 +1,14 @@
+package com.bigbirthday.invitation;
+
 import java.io.File;
 
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.HashMap;
 
-class Label {
+
+
+public class Label {
 
     public static void main(String[] args) throws IOException {
 
@@ -34,6 +38,7 @@ class Label {
                 filtered = filtered.ageFilter(age);
             }
         }
-        filtered.print(filterOptions);
+        LabelPrinter printer = new LabelPrinter(filtered);
+        printer.print(filterOptions);
     }
 }

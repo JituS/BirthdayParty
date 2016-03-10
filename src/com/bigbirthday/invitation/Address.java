@@ -1,11 +1,17 @@
+package com.bigbirthday.invitation;
+
 public class Address {
 
     private City city;
     private State state;
     private Country country;
 
-    public String toString() {
-        return country + "";
+    public String address() {
+        return city + ", " + state;
+    }
+
+    public String country(){
+        return country+"";
     }
 
     public Address(City city, State state, Country country) {

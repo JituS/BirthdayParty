@@ -1,3 +1,4 @@
+import com.bigbirthday.invitation.*;
 import org.junit.Before;
 import org.junit.Test;
 

@@ -1,3 +1,5 @@
+package com.bigbirthday.invitation;
+
 public class Person {
     private Name name;
     private Address address;
@@ -26,10 +28,14 @@ public class Person {
     }
 
     public String country() {
-        return address + "";
+        return address.country();
     }
 
     public String age() {
         return age.toString();
+    }
+
+    public String getAddress() {
+        return address.address();
     }
 }
