@@ -1,22 +1,28 @@
+import java.util.Arrays;
+
 public class Name{
     private String firstName;
     private String lastName;
-    private String prefix;
+    private String gender;
 
-    public String getFirstLastName() {
-        return prefix + " " + firstName +" "+ lastName;
-    }
-    public String getLastFirstName() {
-        return prefix + " " + lastName +", "+ firstName;
-    }
-
-    private String getPrefix(String gender){
-        return gender.toUpperCase().equals("FEMALE") ? Gender.FEMALE.getPrefix() : Gender.MALE.getPrefix();
+    @Override
+    public String toString() {
+        return  getFormalName();
     }
 
     public Name(String firstName, String lastName, String gender) {
         this.firstName = firstName;
         this.lastName = lastName;
-        this.prefix = getPrefix(gender);
+        this.gender = gender;
+    }
+
+    public String getInformalName() {
+        String prefix = gender.equalsIgnoreCase("female") ? Gender.FEMALE.getPrefix() : Gender.MALE.getPrefix();
+        return prefix + " " + firstName +" "+ lastName;
+    }
+
+    public String getFormalName() {
+        String prefix = gender.equalsIgnoreCase("female") ? Gender.FEMALE.getPrefix() : Gender.MALE.getPrefix();
+        return prefix + " " + lastName +", "+ firstName;
     }
 }

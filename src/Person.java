@@ -1,28 +1,35 @@
-public class Person{
+public class Person {
     private Name name;
-    private Place place;
-    private int age;
+    private Address address;
+    private Age age;
 
-    @Override
-    public String toString() {
-        return  name.toString() + "\n"+ place.toString();
-    }
-
-    public Person(Name name, Place place, int age) {
+    public Person(Name name, Address address, Age age) {
         this.name = name;
-        this.place = place;
+        this.address = address;
         this.age = age;
     }
 
-    public String getFirstLastName(){
-        return name.getFirstLastName();
+    public boolean belongsFromCountry(Country country){
+        return address.isSameCountry(country);
     }
 
-    public String getLastFirstName(){
-        return getLastFirstName();
+    public boolean ageGreaterThan(Age anotherAge) {
+        return age.isGreaterThan(anotherAge);
     }
 
-    public boolean belongsFromCountry(String country){
-        return country.toUpperCase().equals(this.place.getCountry().toUpperCase());
+    public String formal() {
+        return name.getFormalName();
+    }
+
+    public String inFormal() {
+        return name.getInformalName();
+    }
+
+    public String country() {
+        return address + "";
+    }
+
+    public String age() {
+        return age.toString();
     }
 }

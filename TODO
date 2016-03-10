@@ -1,0 +1,20 @@
+
+Create a library to print label for invitation card
+
+Given a people information in a file
+	Input format : firstName,lastName,gender,age,city,state,country		
+
+Output format:
+	Mr first last or Mr last, first
+
+usage:
+    java Label filename -f [-c countryName -a age | -a age -c countryName]
+    java Label filename -if [-c countryName -a age | -a age -c countryName]
+    java Label filename //default it should take formal name
+    java Label filename //default it should take formal name
+--------------------------------------------------------------------------------
+
+Need to implement
+    reads file text of given file name and split it into individual record
+    add prefix according to gender
+    implement print method for represent people detail
