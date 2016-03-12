@@ -1,4 +1,5 @@
 import com.bigbirthday.invitation.*;
+import com.bigbirthday.invitation.Person;
 import org.junit.Before;
 import org.junit.Test;
 

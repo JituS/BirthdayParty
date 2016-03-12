@@ -1,6 +1,7 @@
 package com.bigbirthday.invitation;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class RecordsFormatter {
     private final String fileText;
@@ -9,9 +10,9 @@ public class RecordsFormatter {
         this.fileText = fileText;
     }
 
-    public Person[] getRecords() throws IOException {
+    public ArrayList<Person> getRecords() throws IOException {
         String[] allRecords = fileText.split("\n");
-        Person[] records = new Person[allRecords.length];
+        ArrayList<Person> records = new ArrayList<Person>();
         for (int i = 0; i < allRecords.length; i++){
             String[] record = allRecords[i].split(",");
 
@@ -22,7 +23,7 @@ public class RecordsFormatter {
             Age age = new Age(Integer.parseInt(record[3]));
 
             Address address = new Address(city, state, country);
-            records[i] = new Person(name, address, age);
+            records.add(new Person(name, address, age));
         }
         return records;
     }

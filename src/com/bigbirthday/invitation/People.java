@@ -1,16 +1,17 @@
 package com.bigbirthday.invitation;
-
 import java.util.ArrayList;
+import java.util.List;
 
 public class People{
-    private ArrayList<Person> people;
 
-    public People() {
-        this.people = new ArrayList<>();
+    private List<Person> people;
+
+    public People(List<Person> list) {
+        this.people = list;
     }
 
     public People ageFilter(Age age){
-        People filtered = new People();
+        People filtered = new People(new ArrayList<>());
         for (Person person : people) {
             if(person.ageGreaterThan(age))
                 filtered.add(person);
@@ -19,7 +20,7 @@ public class People{
     }
 
     public People countryFilter(Country country){
-        People filtered = new People();
+        People filtered = new People(new ArrayList<>());
         for (Person person : people) {
             if (person.belongsFromCountry(country))
                 filtered.add(person);
@@ -32,7 +33,7 @@ public class People{
     }
 
     @Override
-    public boolean equals(Object o) {
+    public boolean equals(java.lang.Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         People people1 = (People) o;
@@ -45,5 +46,11 @@ public class People{
 
     public int size() {
         return people.size();
+    }
+
+    public People filter(CompositePredicate compositePredicate) {
+        People filtered = new People(new ArrayList<>());
+        people.stream().filter(person -> compositePredicate.test(person)).forEach(filtered::add);
+        return filtered;
     }
 }

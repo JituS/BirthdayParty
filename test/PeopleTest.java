@@ -1,17 +1,20 @@
 import com.bigbirthday.invitation.*;
+import com.bigbirthday.invitation.Person;
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+import java.util.ArrayList;
+import java.util.List;
 
+import static org.junit.Assert.*;
 
 public class PeopleTest {
     private Name name1;
     private Name name2;
     private Address address1;
     private Address address2;
-    private Address address3;
     private Name name3;
+    private Address address3;
 
     @Before
     public void setUp() throws Exception {
@@ -32,13 +35,15 @@ public class PeopleTest {
         peopleList[0] = Gavin;
         peopleList[1] = Jeromy;
         peopleList[2] = Arun;
-        People people = new People();
+        List<Person> guest = new ArrayList<>();
         for (Person aPeopleList : peopleList) {
-            people.add(aPeopleList);
+            guest.add(aPeopleList);
         }
-        People expected = new People();
-        expected.add(Gavin);
-        expected.add(Arun);
+        People people = new People(guest);
+        List<Person> expectedList = new ArrayList<>();
+        expectedList.add(Gavin);
+        expectedList.add(Arun);
+        People expected = new People(expectedList);
         People actual = people.countryFilter(new Country("Bangladesh"));
         assertEquals(expected, actual);
     }
@@ -52,12 +57,15 @@ public class PeopleTest {
         peopleList[0] = Gavin;
         peopleList[1] = Jeromy;
         peopleList[2] = Arun;
-        People people = new People();
+
+        List<Person> guests = new ArrayList<>();
         for (Person aPeopleList : peopleList) {
-            people.add(aPeopleList);
+            guests.add(aPeopleList);
         }
-        People expected = new People();
-        People actual = people.countryFilter(new Country("India"));
+        People guestsList = new People(guests);
+        List<Person> expectedList = new ArrayList<>();
+        People expected = new People(expectedList);
+        People actual = guestsList.countryFilter(new Country("Ingland"));
         assertEquals(expected, actual);
     }
 
@@ -70,14 +78,17 @@ public class PeopleTest {
         peopleList[0] = Gavin;
         peopleList[1] = Jeromy;
         peopleList[2] = Arun;
-        People people = new People();
+        List<Person> guests = new ArrayList<>();
         for (Person aPeopleList : peopleList) {
-            people.add(aPeopleList);
+            guests.add(aPeopleList);
         }
-        People expected = new People();
-        expected.add(Gavin);
-        expected.add(Jeromy);
-        People actual = people.ageFilter(new Age(20));
+        People guestsList = new People(guests);
+
+        List<Person> expectedList = new ArrayList<>();
+        expectedList.add(Gavin);
+        expectedList.add(Jeromy);
+        People expected = new People(expectedList);
+        People actual = guestsList.ageFilter(new Age(20));
         assertEquals(expected, actual);
     }
 }

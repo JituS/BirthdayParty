@@ -31,10 +31,6 @@ public class Person {
         return address.country();
     }
 
-    public String age() {
-        return age.toString();
-    }
-
     public String getAddress() {
         return address.address();
     }

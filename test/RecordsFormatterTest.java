@@ -2,6 +2,8 @@ import com.bigbirthday.invitation.Person;
 import com.bigbirthday.invitation.RecordsFormatter;
 import org.junit.Test;
 
+import java.util.List;
+
 import static org.junit.Assert.*;
 
 public class RecordsFormatterTest {
@@ -11,7 +13,7 @@ public class RecordsFormatterTest {
                 "Melody,Dooley,Female,31,West Shanna,Vermont,Bangladesh\n" +
                 "Gavin,Hyatt,Male,36,Crooks ton,Illinois,Romania";
         RecordsFormatter recordsFormatter = new RecordsFormatter(text);
-        Person[] people = recordsFormatter.getRecords();
-        assertEquals(people.length, 3);
+        List<Person> people = recordsFormatter.getRecords();
+        assertEquals(people.size(), 3);
     }
 }
